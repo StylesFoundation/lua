@@ -18,6 +18,7 @@ jobs:
       - run: |
           pip install mkdocs mkdocs-material pymdown-extensions ghp-import
           mkdocs build
+          echo "lua.styles.wtf" > site/CNAME
           ghp-import -n -p -f site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
