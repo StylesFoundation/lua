@@ -1,0 +1,2274 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../client/">
+      
+      
+        <link rel="next" href="../hypixel_api/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>entity - Styles Script</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entity" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Styles Script" class="md-header__button md-logo" aria-label="Styles Script" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Styles Script
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              entity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Styles Script" class="md-nav__button md-logo" aria-label="Styles Script" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Styles Script
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    入门
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../global/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lua/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lua五分钟指南
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/fonts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字体列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/guievents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gui
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/packets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    支持的数据包类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/example/cancelc02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cancel C02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/example/simplespeed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Speed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/example/timerutil/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间计算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Libs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    entity
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    entity
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_max_health" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_max_health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_width" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_width
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      in_range
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_health" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation_to" class="md-nav__link">
+    <span class="md-ellipsis">
+      rotation_to
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_health" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hurt_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      hurt_time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_dead_no_hp" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_dead_no_hp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_dead" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_dead
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_living_base" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_living_base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_living" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_living
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_animal" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_animal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_mob" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_mob
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_player" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_player
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_self" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_self
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_x
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_y
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_z" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_z
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_bounding_box" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_bounding_box
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absorption" class="md-nav__link">
+    <span class="md-ellipsis">
+      absorption
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_rotation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_burning" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_burning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_riding" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_riding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_sneaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_sneaking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_sprinting" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_sprinting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blocking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_bot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_team" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_team_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_friend" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_friend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prev_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      prev_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      display_name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      effects
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hypixel_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hypixel_api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    input
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../module_manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    module_manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../player/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    player
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../render/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    render
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unsafe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    unsafe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    world
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_15" id="__nav_5_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lua库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_15">
+            <span class="md-nav__icon md-icon"></span>
+            Lua库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lua%E5%BA%93/colorutil/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ColorUtil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lua%E5%BA%93/stopwatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stopwatch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Objects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Objects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/aabb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AxisAlignedBoundingBox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/blockpos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BlockPos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/category/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Category
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/draggable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Draggable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/effect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PotionEffect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/itemstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ItemStack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/itemtable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ItemTable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Json
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/movementinput/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MovementInput
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/netplayer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetworkPlayer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/rotation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/scaledresolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScaledResolution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/vector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../objects/vector2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector 2D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_max_health" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_max_health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_width" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_width
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      in_range
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_health" class="md-nav__link">
+    <span class="md-ellipsis">
+      set_health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation_to" class="md-nav__link">
+    <span class="md-ellipsis">
+      rotation_to
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_health" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_health
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hurt_time" class="md-nav__link">
+    <span class="md-ellipsis">
+      hurt_time
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_dead_no_hp" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_dead_no_hp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_dead" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_dead
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_living_base" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_living_base
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_living" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_living
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_animal" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_animal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_mob" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_mob
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_player" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_player
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_self" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_self
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_x" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_x
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_y" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_y
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_z" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_z
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_bounding_box" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_bounding_box
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#absorption" class="md-nav__link">
+    <span class="md-ellipsis">
+      absorption
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      inventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_rotation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_burning" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_burning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_riding" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_riding
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_sneaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_sneaking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_sprinting" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_sprinting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_blocking
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_bot" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_bot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_team" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_team_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_team
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_user
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#is_friend" class="md-nav__link">
+    <span class="md-ellipsis">
+      is_friend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prev_position" class="md-nav__link">
+    <span class="md-ellipsis">
+      prev_position
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      remove
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      network
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      display_name
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      effects
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="entity">entity</h1>
+<p>Entity API中的第一个参数（int）均为Entity ID</p>
+<h3 id="get_max_health">get_max_health</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_max_health</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">float</span>
+</code></pre></div>
+获取一个实体的最大生命值</p>
+<h3 id="set_width">set_width</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">set_width</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">,</span> <span class="n">float</span> <span class="n">width</span><span class="p">)</span>
+</code></pre></div>
+设置实体宽度</p>
+<h3 id="in_range">in_range</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">in_range</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">,</span> <span class="n">double</span> <span class="n">range</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否在指定距离内</p>
+<h3 id="set_health">set_health</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">set_health</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">,</span> <span class="n">float</span> <span class="n">health</span><span class="p">)</span>
+</code></pre></div>
+设置实体生命值</p>
+<h3 id="rotation_to">rotation_to</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">rotation_to</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">Rotation</span>
+</code></pre></div>
+返回玩家到目标实体的<a href="../../objects/rotation/">Rotation</a></p>
+<h3 id="get_health">get_health</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_health</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">float</span>
+</code></pre></div>
+返回实体生命值</p>
+<h3 id="hurt_time">hurt_time</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">hurt_time</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">int</span>
+</code></pre></div>
+返回实体hurttime</p>
+<h3 id="is_dead_no_hp">is_dead_no_hp</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_dead_no_hp</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否已经死亡而且没有生命</p>
+<h3 id="is_dead">is_dead</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_dead</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否已经死亡</p>
+<h3 id="is_living_base">is_living_base</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_living_base</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否继承<code>EntityLivingBase</code></p>
+<h3 id="is_living">is_living</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_living</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否继承<code>EntityLiving</code></p>
+<h3 id="is_animal">is_animal</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_animal</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否是动物</p>
+<h3 id="is_mob">is_mob</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_mob</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否是怪物</p>
+<h3 id="is_player">is_player</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_player</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否是玩家</p>
+<h3 id="is_self">is_self</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_self</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+返回实体是否是玩家自身</p>
+<h3 id="get_position">get_position</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_position</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">BlockPos</span>
+</code></pre></div>
+返回实体坐标，以<a href="../../objects/blockpos/">BlockPos</a>的形式返回</p>
+<h3 id="get_x">get_x</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_x</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">double</span>
+</code></pre></div>
+返回实体的x坐标</p>
+<h3 id="get_y">get_y</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_y</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">double</span>
+</code></pre></div>
+返回实体的y坐标</p>
+<h3 id="get_z">get_z</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_z</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">double</span>
+</code></pre></div>
+返回实体的z坐标</p>
+<h3 id="get_bounding_box">get_bounding_box</h3>
+<div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_bounding_box</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">AxisAlignedBoundingBox</span>
+</code></pre></div>
+<p>获取实体碰撞箱，返回<a href="../../objects/aabb/">AxisAlignedBoundingBox</a></p>
+<h3 id="absorption">absorption</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">absorption</span><span class="p">(</span><span class="n">int</span> <span class="n">entityID</span><span class="p">)</span> <span class="p">:</span> <span class="n">int</span>
+</code></pre></div>
+获取实体的伤害吸收值</p>
+<h3 id="inventory">inventory</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">inventory</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">ItemTable</span>
+</code></pre></div>
+返回一个<a href="../../objects/itemtable/">ItemTable</a></p>
+<h3 id="get_rotation">get_rotation</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">get_rotation</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">Rotation</span>
+</code></pre></div>
+返回实体转头数据，以<a href="../../objects/rotation/">Rotation</a>形式返回</p>
+<h3 id="is_burning">is_burning</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_burning</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否在燃烧</p>
+<h3 id="is_riding">is_riding</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_riding</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否在骑乘</p>
+<h3 id="is_sneaking">is_sneaking</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_sneaking</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否在潜行</p>
+<h3 id="is_sprinting">is_sprinting</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_sprinting</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否在疾跑</p>
+<h3 id="is_blocking">is_blocking</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_blocking</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否在格挡</p>
+<h3 id="is_bot">is_bot</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_bot</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否为机器人，完全基于AntiBot的判断，不100%准确，必须开启AntiBot才能返回true</p>
+<h3 id="is_team">is_team</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_team</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否是队友，非100%准确在所有服务器（仅保证Hypixel准确）</p>
+<h3 id="is_team_1">is_team</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_team</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否是队友，非100%准确在所有服务器（仅保证Hypixel准确）</p>
+<h3 id="is_user">is_user</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_user</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否为Styles用户</p>
+<h3 id="is_friend">is_friend</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">is_friend</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">boolean</span>
+</code></pre></div>
+获取实体是否为好友</p>
+<h3 id="prev_position">prev_position</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">prev_position</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">BlockPos</span>
+</code></pre></div>
+返回实体的上一位置，以<a href="../../objects/blockpos/">BlockPos</a>形式返回</p>
+<h3 id="remove">remove</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span>
+</code></pre></div>
+从世界移除实体</p>
+<h3 id="network">network</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">network</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">NetworkPlayer</span>
+</code></pre></div>
+获取一个<strong>玩家</strong>的网络游戏信息，以<a href="../../objects/netplayer/">NetworkPlayer</a>返回</p>
+<p>示例返回：
+<div class="highlight"><pre><span></span><code><span class="n">NetworkPlayer</span><span class="p">{</span><span class="n">ping</span><span class="o">=</span><span class="mi">287</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="o">=</span><span class="n">Darrin900</span><span class="p">,</span><span class="w"> </span><span class="n">game_mode</span><span class="o">=</span><span class="n">survival</span><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="display_name">display_name</h3>
+<p><div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">display_name</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">string</span>
+</code></pre></div>
+获取一个实体的显示名字</p>
+<h3 id="effects">effects</h3>
+<div class="highlight"><pre><span></span><code><span class="n">entity</span><span class="p">.</span><span class="n">effects</span><span class="p">(</span><span class="n">int</span> <span class="n">entityId</span><span class="p">)</span> <span class="p">:</span> <span class="n">PotionEffect</span><span class="p">[]</span>
+</code></pre></div>
+<p>返回一个实体现有的所有药水效果，以<a href="../../objects/effect/">PotionEffect</a>形式返回</p>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code><span class="kr">function</span> <span class="nf">on_enable</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">list</span> <span class="o">=</span> <span class="n">entity</span><span class="p">.</span><span class="n">effects</span><span class="p">()</span>
+
+    <span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">list</span> <span class="kr">do</span>
+        <span class="kd">local</span> <span class="n">effect</span> <span class="o">=</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">client</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">effect</span><span class="p">);</span>
+    <span class="kr">end</span>
+<span class="kr">end</span>
+</code></pre></div>
+<p>将会输出
+<div class="highlight"><pre><span></span><code><span class="n">PotionEffect</span><span class="p">{</span><span class="n">name</span><span class="o">=</span><span class="n">potion</span><span class="p">.</span><span class="na">moveSpeed</span><span class="p">,</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">duration</span><span class="o">=</span><span class="mi">1769</span><span class="p">,</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span>
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1698 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../global/">
+      
+      
+        <link rel="next" href="../API/events/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Lua五分钟指南 - Styles Script</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lua" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Styles Script" class="md-header__button md-logo" aria-label="Styles Script" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Styles Script
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lua五分钟指南
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Styles Script" class="md-nav__button md-logo" aria-label="Styles Script" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Styles Script
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    入门
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../global/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lua五分钟指南
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    API
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/events/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    事件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/fonts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    字体列表
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/guievents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gui
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/packets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    支持的数据包类型
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Example
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/example/cancelc02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cancel C02
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/example/simplespeed/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simple Speed
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../API/example/timerutil/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    时间计算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Libs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Libs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/bus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/entity/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    entity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/hypixel_api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    hypixel_api
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/input/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    input
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/inventory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    inventory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/module_manager/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    module_manager
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/player/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    player
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/render/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    render
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/shader/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    shader
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/unsafe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    unsafe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/user/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    user
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/util/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    util
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/world/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    world
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_15" id="__nav_5_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Lua库
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_15">
+            <span class="md-nav__icon md-icon"></span>
+            Lua库
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/lua%E5%BA%93/colorutil/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ColorUtil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../libs/lua%E5%BA%93/stopwatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stopwatch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Objects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Objects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/aabb/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AxisAlignedBoundingBox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/blockpos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BlockPos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/category/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Category
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/draggable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Draggable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/effect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PotionEffect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/itemstack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ItemStack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/itemtable/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ItemTable
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/json/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Json
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/movementinput/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MovementInput
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/netplayer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NetworkPlayer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/rotation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/scaledresolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ScaledResolution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/value/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Value
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/vector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objects/vector2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector 2D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="lua">Lua五分钟指南</h1>
+<p>翻译自 https://learnxinyminutes.com/docs/lua/</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- 两个短横线开头表示一行注释。</span>
+
+<span class="cm">--[[</span>
+<span class="cm">     添加两个[&#39;s和]&#39;s使其成为</span>
+<span class="cm">     多行注释。</span>
+<span class="cm">--]]</span>
+
+<span class="c1">----------------------------------------------------</span>
+<span class="c1">-- 1. 变量和流程控制。</span>
+<span class="c1">----------------------------------------------------</span>
+
+<span class="n">num</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1">-- 所有数字都是双精度浮点数。</span>
+<span class="c1">-- 别担心，64位双精度浮点数具有52位用于</span>
+<span class="c1">-- 存储精确的整数值；机器精度对于需要&lt;52位的整数来说</span>
+<span class="c1">-- 不是问题。</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;walternate&#39;</span>  <span class="c1">-- 不可变字符串，类似于Python。</span>
+<span class="n">t</span> <span class="o">=</span> <span class="s2">&quot;双引号也可以&quot;</span>
+<span class="n">u</span> <span class="o">=</span> <span class="s">[[ 双方括号</span>
+<span class="s">       开始和结束</span>
+<span class="s">       多行字符串。]]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="kc">nil</span>  <span class="c1">-- 取消定义t；Lua具有垃圾回收。</span>
+
+<span class="c1">-- 使用关键字do/end来表示代码块：</span>
+<span class="kr">while</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="kr">do</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1">-- 没有++或+=类型的运算符。</span>
+<span class="kr">end</span>
+
+<span class="c1">-- 条件语句：</span>
+<span class="kr">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="kr">then</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;超过40&#39;</span><span class="p">)</span>
+<span class="kr">elseif</span> <span class="n">s</span> <span class="o">~=</span> <span class="s1">&#39;walternate&#39;</span> <span class="kr">then</span>  <span class="c1">-- ~= 表示不等于。</span>
+  <span class="c1">-- 相等检查使用==，类似于Python；适用于字符串。</span>
+  <span class="nb">io.write</span><span class="p">(</span><span class="s1">&#39;不超过40</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">-- 默认为标准输出。</span>
+<span class="kr">else</span>
+  <span class="c1">-- 变量默认是全局的。</span>
+  <span class="n">thisIsGlobal</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1">-- 骆驼命名法很常见。</span>
+
+  <span class="c1">-- 如何使变量成为局部的：</span>
+  <span class="kd">local</span> <span class="n">line</span> <span class="o">=</span> <span class="nb">io.read</span><span class="p">()</span>  <span class="c1">-- 读取下一行标准输入。</span>
+
+  <span class="c1">-- 字符串连接使用..运算符：</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;冬天要来了，&#39;</span> <span class="o">..</span> <span class="n">line</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="c1">-- 未定义的变量返回nil。</span>
+<span class="c1">-- 这不是一个错误：</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">anUnknownVariable</span>  <span class="c1">-- 现在foo = nil。</span>
+
+<span class="n">aBoolValue</span> <span class="o">=</span> <span class="kc">false</span>
+
+<span class="c1">-- 只有nil和false是假值；0和&#39;&#39;为真！</span>
+<span class="kr">if</span> <span class="ow">not</span> <span class="n">aBoolValue</span> <span class="kr">then</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;它是假的&#39;</span><span class="p">)</span> <span class="kr">end</span>
+
+<span class="c1">-- &#39;or&#39;和&#39;and&#39;是短路逻辑运算符。</span>
+<span class="c1">-- 这类似于C/js中的a?b:c运算符：</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">aBoolValue</span> <span class="ow">and</span> <span class="s1">&#39;是的&#39;</span> <span class="ow">or</span> <span class="s1">&#39;否&#39;</span>  <span class="c1">--&gt; &#39;否&#39;</span>
+
+<span class="n">karlSum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span> <span class="kr">do</span>  <span class="c1">-- 范围包括两端。</span>
+  <span class="n">karlSum</span> <span class="o">=</span> <span class="n">karlSum</span> <span class="o">+</span> <span class="n">i</span>
+<span class="kr">end</span>
+
+<span class="c1">-- 使用&quot;100, 1, -1&quot;作为范围来倒数：</span>
+<span class="n">fredSum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="kr">for</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="kr">do</span> <span class="n">fredSum</span> <span class="o">=</span> <span class="n">fredSum</span> <span class="o">+</span> <span class="n">j</span> <span class="kr">end</span>
+
+<span class="c1">-- 通常情况下，范围是begin, end[, step]。</span>
+
+<span class="c1">-- 另一个循环构造：</span>
+<span class="kr">repeat</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;未来的方式&#39;</span><span class="p">)</span>
+  <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="kr">until</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="c1">----------------------------------------------------</span>
+<span class="c1">-- 2. 函数。</span>
+<span class="c1">----------------------------------------------------</span>
+
+<span class="kr">function</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="kr">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="kr">then</span> <span class="kr">return</span> <span class="mi">1</span> <span class="kr">end</span>
+  <span class="kr">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="c1">-- 闭包和匿名函数是可以的：</span>
+<span class="kr">function</span> <span class="nf">adder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="c1">-- 返回的函数在调用adder时创建，</span>
+  <span class="c1">-- 并记住了x的值：</span>
+  <span class="kr">return</span> <span class="kr">function</span> <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="kr">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="kr">end</span>
+<span class="kr">end</span>
+<span class="n">a1</span> <span class="o">=</span> <span class="n">adder</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">adder</span><span class="p">(</span><span class="mi">36</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1">--&gt; 25</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="p">(</span><span class="mi">64</span><span class="p">))</span>  <span class="c1">--&gt; 100</span>
+
+<span class="c1">-- 返回值、函数调用和赋值都可以使用</span>
+<span class="c1">-- 长度不匹配的列表，未匹配的接收者是nil；</span>
+<span class="c1">-- 未匹配的发送者被丢弃。</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<span class="c1">-- 现在x = 1，y = 2，z = 3，4被丢弃。</span>
+
+<span class="kr">function</span> <span class="nf">bar</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+  <span class="kr">return</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">42</span>
+<span class="kr">end</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">bar</span><span class="p">(</span><span class="s1">&#39;zaphod&#39;</span><span class="p">)</span>  <span class="c1">--&gt; 打印 &quot;zaphod  nil nil&quot;</span>
+<span class="c1">-- 现在x = 4，y = 8，值15...42被丢弃。</span>
+
+<span class="c1">-- 函数是一等公民，可以是局部/全局的。</span>
+<span class="c1">-- 这两者是相同的：</span>
+<span class="kr">function</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="kr">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="kr">end</span>
+<span class="n">f</span> <span class="o">=</span> <span class="kr">function</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="kr">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="kr">end</span>
+
+<span class="c1">-- 这两者也是相同的：</span>
+<span class="kd">local</span> <span class="kr">function</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="kr">return</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="kr">end</span>
+<span class="kd">local</span> <span class="n">g</span><span class="p">;</span> <span class="n">g</span>  <span class="o">=</span> <span class="kr">function</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="kr">return</span> <span class="nb">math.sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="kr">end</span>
+<span class="c1">-- &#39;local g&#39;声明使g的自我引用有效。</span>
+
+<span class="c1">-- 顺便说一下，三角函数在弧度中工作。</span>
+
+<span class="c1">-- 具有一个字符串参数的调用不需要括号：</span>
+<span class="nb">print</span> <span class="s1">&#39;你好&#39;</span>  <span class="c1">-- 可以正常工作。</span>
+
+<span class="c1">----------------------------------------------------</span>
+<span class="c1">-- 3. 表。</span>
+<span class="c1">----------------------------------------------------</span>
+
+<span class="c1">-- 表 = Lua的唯一复合数据结构；</span>
+<span class="c1">-- 它们是关联数组。</span>
+<span class="c1">-- 类似于php数组或js对象，它们是</span>
+<span class="c1">-- 哈希查找字典，也可以用作列表。</span>
+
+<span class="c1">-- 将表用作字典/映射时：</span>
+
+<span class="c1">-- 字典字面量默认具有字符串键：</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">{</span><span class="n">key1</span> <span class="o">=</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="n">key2</span> <span class="o">=</span> <span class="kc">false</span><span class="p">}</span>
+
+<span class="c1">-- 字符串键可以使用类似js的点表示法：</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">key1</span><span class="p">)</span>  <span class="c1">-- 打印 &#39;value1&#39;。</span>
+<span class="n">t</span><span class="p">.</span><span class="n">newKey</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1">-- 添加新的键/值对。</span>
+<span class="n">t</span><span class="p">.</span><span class="n">key2</span> <span class="o">=</span> <span class="kc">nil</span>   <span class="c1">-- 从表中删除key2。</span>
+
+<span class="c1">-- 任何（非nil）值的字面量表示法：</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">{[</span><span class="s1">&#39;@!#&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;qbert&#39;</span><span class="p">,</span> <span class="p">[{}]</span> <span class="o">=</span> <span class="mi">1729</span><span class="p">,</span> <span class="p">[</span><span class="mf">6.28</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;tau&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mf">6.28</span><span class="p">])</span>  <span class="c1">-- 打印 &quot;tau&quot;</span>
+
+<span class="c1">-- 对于数字和字符串，键匹配基本上是按值进行的</span>
+<span class="c1">-- 但对于表来说是按标识进行的。</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">u</span><span class="p">[</span><span class="s1">&#39;@!#&#39;</span><span class="p">]</span>  <span class="c1">-- 现在a = &#39;qbert&#39;。</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">u</span><span class="p">[{}]</span>     <span class="c1">-- 我们可能期望1729，但实际是nil：</span>
+<span class="c1">-- b = nil，因为查找失败。它失败</span>
+<span class="c1">-- 是因为我们使用的键与用于存储原始值的键</span>
+<span class="c1">-- 不是同一个对象。所以</span>
+<span class="c1">-- 字符串和数字更适用于键。</span>
+
+<span class="c1">-- 调用一个表参数的函数不需要括号：</span>
+<span class="kr">function</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">key1</span><span class="p">)</span> <span class="kr">end</span>
+<span class="n">h</span><span class="p">{</span><span class="n">key1</span> <span class="o">=</span> <span class="s1">&#39;Sonmi~451&#39;</span><span class="p">}</span>  <span class="c1">-- 打印 &#39;Sonmi~451&#39;。</span>
+
+<span class="kr">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="kr">do</span>  <span class="c1">-- 表迭代。</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="c1">-- _G是所有全局变量的特殊表。</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">_G</span><span class="p">[</span><span class="s1">&#39;_G&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nb">_G</span><span class="p">)</span>  <span class="c1">-- 打印 &#39;true&#39;。</span>
+
+<span class="c1">-- 使用表作为列表/数组时：</span>
+
+<span class="c1">-- 列表字面量隐式设置了整数键：</span>
+<span class="n">v</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;value1&#39;</span><span class="p">,</span> <span class="s1">&#39;value2&#39;</span><span class="p">,</span> <span class="mf">1.21</span><span class="p">,</span> <span class="s1">&#39;gigawatts&#39;</span><span class="p">}</span>
+<span class="kr">for</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="o">#</span><span class="n">v</span> <span class="kr">do</span>  <span class="c1">-- #v表示列表的大小。</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1">-- 索引从1开始！！非常疯狂！</span>
+<span class="kr">end</span>
+<span class="c1">-- &#39;列表&#39;不是一个真正的类型。v只是一个表，</span>
+<span class="c1">-- 具有连续的整数键，被视为一个列表。</span>
+
+<span class="c1">----------------------------------------------------</span>
+<span class="c1">-- 3.1 元表和元方法。</span>
+<span class="c1">----------------------------------------------------</span>
+
+<span class="c1">-- 表可以具有元表，元表提供表的运算符重载行为。稍后我们将看到</span>
+<span class="c1">-- 元表支持js原型行为。</span>
+
+<span class="n">f1</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span><span class="p">}</span>  <span class="c1">-- 表示分数 a/b。</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">}</span>
+
+<span class="c1">-- 这将失败：</span>
+<span class="c1">-- s = f1 + f2</span>
+
+<span class="n">metafraction</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="kr">function</span> <span class="nc">metafraction</span><span class="p">.</span><span class="nf">__add</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">)</span>
+  <span class="n">sum</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="n">sum</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">b</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">b</span>
+  <span class="n">sum</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">f1</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">f2</span><span class="p">.</span><span class="n">b</span> <span class="o">+</span> <span class="n">f2</span><span class="p">.</span><span class="n">a</span> <span class="o">*</span> <span class="n">f1</span><span class="p">.</span><span class="n">b</span>
+  <span class="kr">return</span> <span class="n">sum</span>
+<span class="kr">end</span>
+
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">metafraction</span><span class="p">)</span>
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">metafraction</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>  <span class="c1">-- 在f1的元表上调用__add(f1, f2)</span>
+
+<span class="c1">-- f1, f2没有元表的键，不同于</span>
+<span class="c1">-- js中的原型，所以必须像这样检索它getmetatable(f1)。元表是一个正常的表</span>
+<span class="c1">-- 具有Lua了解的键，如__add。</span>
+
+<span class="c1">-- 但是下一行会失败，因为s没有元表：</span>
+<span class="c1">-- t = s + s</span>
+<span class="c1">-- 下面的类似模式将修复这个问题。</span>
+
+<span class="c1">-- 在元表上重载点查找的__index：</span>
+<span class="n">defaultFavs</span> <span class="o">=</span> <span class="p">{</span><span class="n">animal</span> <span class="o">=</span> <span class="s1">&#39;gru&#39;</span><span class="p">,</span> <span class="n">food</span> <span class="o">=</span> <span class="s1">&#39;donuts&#39;</span><span class="p">}</span>
+<span class="n">myFavs</span> <span class="o">=</span> <span class="p">{</span><span class="n">food</span> <span class="o">=</span> <span class="s1">&#39;pizza&#39;</span><span class="p">}</span>
+<span class="nb">setmetatable</span><span class="p">(</span><span class="n">myFavs</span><span class="p">,</span> <span class="p">{</span><span class="n">__index</span> <span class="o">=</span> <span class="n">defaultFavs</span><span class="p">})</span>
+<span class="n">eatenBy</span> <span class="o">=</span> <span class="n">myFavs</span><span class="p">.</span><span class="n">animal</span>  <span class="c1">-- 成功！谢谢，元表</span>
+
+<span class="c1">-- 直接表查找失败时将使用元表的__index值进行重试，这会递归进行。</span>
+
+<span class="c1">-- __index值也可以是一个函数(tbl, key)</span>
+<span class="c1">-- 以进行更自定义的查找。</span>
+
+<span class="c1">-- __index,add等的值称为元方法。</span>
+<span class="c1">-- 完整列表。在此a是一个具有元方法的表。</span>
+
+<span class="c1">-- __add(a, b)                     用于a + b</span>
+<span class="c1">-- __sub(a, b)                     用于a - b</span>
+<span class="c1">-- __mul(a, b)                     用于a * b</span>
+<span class="c1">-- __div(a, b)                     用于a / b</span>
+<span class="c1">-- __mod(a, b)                     用于a % b</span>
+<span class="c1">-- __pow(a, b)                     用于a ^ b</span>
+<span class="c1">-- __unm(a)                        用于-a</span>
+<span class="c1">-- __concat(a, b)                  用于a .. b</span>
+<span class="c1">-- __len(a)                        用于#a</span>
+<span class="c1">-- __eq(a, b)                      用于a == b</span>
+<span class="c1">-- __lt(a, b)                      用于a &lt; b</span>
+<span class="c1">-- __le(a, b)                      用于a &lt;= b</span>
+<span class="c1">-- __index(a, b)  &lt;fn or a table&gt;  用于a.b</span>
+<span class="c1">-- __newindex(a, b, c)             用于a.b = c</span>
+<span class="c1">-- __call(a, ...)                  用于a(...)</span>
+
+<span class="c1">----------------------------------------------------</span>
+<span class="c1">-- 3.2 类似类的表和继承。</span>
+<span class="c1">----------------------------------------------------</span>
+
+<span class="c1">-- 类并不是内置的；可以使用不同的方式</span>
+<span class="c1">-- 使用表和元表来创建它们。</span>
+
+<span class="c1">-- 以下是此示例的解释：</span>
+
+<span class="n">Dog</span> <span class="o">=</span> <span class="p">{}</span>                                   <span class="c1">-- 1.</span>
+
+<span class="kr">function</span> <span class="nc">Dog</span><span class="p">:</span><span class="nf">new</span><span class="p">()</span>                         <span class="c1">-- 2.</span>
+  <span class="n">newObj</span> <span class="o">=</span> <span class="p">{</span><span class="n">sound</span> <span class="o">=</span> <span class="s1">&#39;woof&#39;</span><span class="p">}</span>                <span class="c1">-- 3.</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">self</span>                      <span class="c1">-- 4.</span>
+  <span class="kr">return</span> <span class="nb">setmetatable</span><span class="p">(</span><span class="n">newObj</span><span class="p">,</span> <span class="n">self</span><span class="p">)</span>        <span class="c1">-- 5.</span>
+<span class="kr">end</span>
+
+<span class="kr">function</span> <span class="nc">Dog</span><span class="p">:</span><span class="nf">makeSound</span><span class="p">()</span>                   <span class="c1">-- 6.</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;我说 &#39;</span> <span class="o">..</span> <span class="n">self</span><span class="p">.</span><span class="n">sound</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">mrDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                          <span class="c1">-- 7.</span>
+<span class="n">mrDog</span><span class="p">:</span><span class="n">makeSound</span><span class="p">()</span>  <span class="c1">-- &#39;我说woof&#39;         -- 8.</span>
+
+<span class="c1">-- 1. Dog充当类；实际上是一个表。</span>
+<span class="c1">-- 2. 函数tablename:fn(...)与</span>
+<span class="c1">--    函数tablename.fn(self, ...)相同</span>
+<span class="c1">--    冒号只是添加了一个名为self的第一个参数。</span>
+<span class="c1">--    请查看下面的7和8，了解self如何获得其值。</span>
+<span class="c1">-- 3. newObj将成为类Dog的一个实例。</span>
+<span class="c1">-- 4. self = 正在实例化的类。通常</span>
+<span class="c1">--    self = Dog，但继承可以更改它。</span>
+<span class="c1">--    当我们同时设置newObj的元表和self的__index为self时，</span>
+<span class="c1">--    newObj获得了self的函数。</span>
+<span class="c1">-- 5. 提示：setmetatable返回其第一个参数。</span>
+<span class="c1">-- 6. 冒号在2中的功能与上述2中相同，但这次我们期望</span>
+<span class="c1">--    self是一个实例，而不是一个类。</span>
+<span class="c1">-- 7. 与Dog.new(Dog)相同，因此self = Dog在new()中。</span>
+<span class="c1">-- 8. 与mrDog.makeSound(mrDog)相同；self = mrDog。</span>
+
+<span class="c1">----------------------------------------------------</span>
+
+<span class="c1">-- 继承示例：</span>
+
+<span class="n">LoudDog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                           <span class="c1">-- 1.</span>
+
+<span class="kr">function</span> <span class="nc">LoudDog</span><span class="p">:</span><span class="nf">makeSound</span><span class="p">()</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">sound</span> <span class="o">..</span> <span class="s1">&#39; &#39;</span>                       <span class="c1">-- 2.</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">..</span> <span class="n">s</span> <span class="o">..</span> <span class="n">s</span><span class="p">)</span>
+<span class="kr">end</span>
+
+<span class="n">seymour</span> <span class="o">=</span> <span class="n">LoudDog</span><span class="p">:</span><span class="n">new</span><span class="p">()</span>                       <span class="c1">-- 3.</span>
+<span class="n">seymour</span><span class="p">:</span><span class="n">makeSound</span><span class="p">()</span>  <span class="c1">-- &#39;woof woof woof&#39;      -- 4.</span>
+
+<span class="c1">-- 1. LoudDog获取了Dog的方法和变量。</span>
+<span class="c1">-- 2. self具有来自new()的&#39;sound&#39;键，见3。</span>
+<span class="c1">-- 3. 与LoudDog.new(LoudDog)相同，并转换为</span>
+<span class="c1">--    Dog.new(LoudDog)，因为LoudDog没有&#39;new&#39;键，</span>
+<span class="c1">--    但具有__index = Dog在其元表上。</span>
+<span class="c1">--    结果：seymour的元表是LoudDog，且</span>
+<span class="c1">--    LoudDog.__index = LoudDog。因此seymour.key将</span>
+<span class="c1">--    = seymour.key，LoudDog.key，Dog.key，哪个表是</span>
+<span class="c1">--    首个具有给定键的表。</span>
+<span class="c1">-- 4. 在LoudDog中找到&#39;makeSound&#39;键；这</span>
+<span class="c1">--    与LoudDog.makeSound(seymour)相同。</span>
+
+<span class="c1">-- 如果需要，子类的new()与基类的相同：</span>
+<span class="kr">function</span> <span class="nc">LoudDog</span><span class="p">:</span><span class="nf">new</span><span class="p">()</span>
+  <span class="n">newObj</span> <span class="o">=</span> <span class="p">{}</span>
+  <span class="c1">-- 设置newObj</span>
+  <span class="n">self</span><span class="p">.</span><span class="n">__index</span> <span class="o">=</span> <span class="n">self</span>
+  <span class="kr">return</span> <span class="nb">setmetatable</span><span class="p">(</span><span class="n">newObj</span><span class="p">,</span> <span class="n">self</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
