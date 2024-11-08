@@ -1,0 +1,23 @@
+site_name: Styles Script
+
+theme:
+  name: material
+  palette: 
+    primary: deep purple
+    scheme: slate
+  logo: images/logo.png
+  # features:
+  #   - navigation.tabs
+    
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
