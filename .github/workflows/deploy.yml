@@ -14,7 +14,8 @@ jobs:
         with:
           python-version: '3.x'
       - run: |
-          pip install mkdocs mkdocs-material pymdown-extensions
-          mkdocs gh-deploy --force --remote-branch gh-pages
+          pip install mkdocs mkdocs-material pymdown-extensions ghp-import
+          mkdocs build
+          ghp-import -n -p -f site
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
